@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development | TechLumin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .dark { --tw-bg-opacity: 1; background-color: rgb(15 23 42 / var(--tw-bg-opacity)); color: white; }
+        .dark .bg-white { background-color: #1e293b !important; }
+        .dark .text-gray-800 { color: #e2e8f0 !important; }
+        .dark .border-gray-200 { border-color: #334155 !important; }
+        .post-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(255, 209, 46, 0.4);}
+        .gold-gradient { background: linear-gradient(135deg, #FFD12E 0%, #997D1A 100%);}
+        .animated-underline { position: relative; display: inline-block; }
+        .animated-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #FFD12E;
+            transition: width 0.3s ease;
+        }
+        .animated-underline:hover::after { width: 100%; }
+    </style>
+</head>
+<body class="bg-white transition-colors duration-300">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm dark:bg-slate-800 transition-colors duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="window.location='index.html'">
+                <div class="gold-gradient w-8 h-8 rounded-full flex items-center justify-center">
+                    <i class="fas fa-lightbulb text-white"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Tech<span class="text-gold-500">Lumin</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="animated-underline text-gray-800 dark:text-white hover:text-gold-500 font-medium">Home</a>
+                <a href="articles.html" class="animated-underline text-gray-800 dark:text-white hover:text-gold-500 font-medium">Articles</a>
+                <a href="dashboards.html" class="animated-underline text-gray-800 dark:text-white hover:text-gold-500 font-medium">Dashboards</a>
+                <a href="topics.html" class="animated-underline text-gray-800 dark:text-white hover:text-gold-500 font-medium">Topics</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <div class="relative inline-block w-12 mr-2 align-middle select-none">
+                    <input type="checkbox" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                    <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                </div>
+                <button class="bg-gold-500 hover:bg-gold-600 text-white font-bold py-2 px-4 rounded-full transition duration-300" onclick="window.location='login.html'">
+                    Login
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="min-h-screen">
+        <section class="py-16 bg-white dark:bg-slate-900">
+            <div class="container mx-auto px-4">
+                <div class="mb-8">
+                    <a href="topics.html" class="text-gold-500 hover:text-gold-600 font-medium flex items-center">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to Topics
+                    </a>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8 mb-12">
+                    <div class="md:w-2/3">
+                        <div class="bg-gold-50 dark:bg-slate-800 rounded-xl p-6 mb-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-16 h-16 bg-gold-100 dark:bg-gold-900 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-code text-gold-500 text-2xl"></i>
+                                </div>
+                                <h1 class="text-3xl font-bold text-gray-800 dark:text-white">Software Development</h1>
+                            </div>
+                            <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                                Software development is the art and science of designing, building, testing, and maintaining applications and systems. It’s at the heart of digital transformation, enabling innovation, automation, and user experiences across every industry.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gold-100 dark:bg-gold-900 text-gold-800 dark:text-gold-200 px-3 py-1 rounded-full text-sm">Agile</span>
+                                <span class="bg-gold-100 dark:bg-gold-900 text-gold-800 dark:text-gold-200 px-3 py-1 rounded-full text-sm">DevOps</span>
+                                <span class="bg-gold-100 dark:bg-gold-900 text-gold-800 dark:text-gold-200 px-3 py-1 rounded-full text-sm">Web Apps</span>
+                                <span class="bg-gold-100 dark:bg-gold-900 text-gold-800 dark:text-gold-200 px-3 py-1 rounded-full text-sm">Mobile</span>
+                                <span class="bg-gold-100 dark:bg-gold-900 text-gold-800 dark:text-gold-200 px-3 py-1 rounded-full text-sm">Testing</span>
+                                <span class="bg-gold-100 dark:bg-gold-900 text-gold-800 dark:text-gold-200 px-3 py-1 rounded-full text-sm">CI/CD</span>
+                            </div>
+                        </div>
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Popular Articles</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Article 1 -->
+                                <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md post-card transition duration-300">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
+                                             alt="Agile Development" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Agile Methodologies: Delivering Value Faster</h3>
+                                        <p class="text-gray-600 dark:text-gray-300 mb-4">How Agile practices help teams adapt, collaborate, and ship quality software quickly.</p>
+                                        <div class="flex justify-between items-center">
+                                            <a href="#" class="text-gold-500 hover:text-gold-600 font-medium">Read More</a>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">May 20, 2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Article 2 -->
+                                <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md post-card transition duration-300">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
+                                             alt="DevOps" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">DevOps in Practice: Bridging Dev and Ops</h3>
+                                        <p class="text-gray-600 dark:text-gray-300 mb-4">Explore how DevOps culture and automation improve software delivery and reliability.</p>
+                                        <div class="flex justify-between items-center">
+                                            <a href="#" class="text-gold-500 hover:text-gold-600 font-medium">Read More</a>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">May 10, 2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Article 3 -->
+                                <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md post-card transition duration-300">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a1408?auto=format&fit=crop&w=800&q=80"
+                                             alt="Web Development" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Modern Web Development: Frameworks & Best Practices</h3>
+                                        <p class="text-gray-600 dark:text-gray-300 mb-4">A guide to the latest tools, frameworks, and practices for building robust web apps.</p>
+                                        <div class="flex justify-between items-center">
+                                            <a href="#" class="text-gold-500 hover:text-gold-600 font-medium">Read More</a>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">April 30, 2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Article 4 -->
+                                <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md post-card transition duration-300">
+                                    <div class="relative h-48 overflow-hidden">
+                                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80"
+                                             alt="Testing" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Automated Testing: Ensuring Quality at Scale</h3>
+                                        <p class="text-gray-600 dark:text-gray-300 mb-4">Discover how automated testing frameworks help teams catch bugs and ship with confidence.</p>
+                                        <div class="flex justify-between items-center">
+                                            <a href="#" class="text-gold-500 hover:text-gold-600 font-medium">Read More</a>
+                                            <span class="text-sm text-gray-500 dark:text-gray-400">April 15, 2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">Development Tools</h2>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow text-center">
+                                    <div class="w-12 h-12 bg-gold-100 dark:bg-gold-900 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fab fa-github text-gold-500"></i>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 dark:text-white">GitHub</h3>
+                                </div>
+                                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow text-center">
+                                    <div class="w-12 h-12 bg-gold-100 dark:bg-gold-900 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-cogs text-gold-500"></i>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 dark:text-white">Jenkins</h3>
+                                </div>
+                                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow text-center">
+                                    <div class="w-12 h-12 bg-gold-100 dark:bg-gold-900 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-vial text-gold-500"></i>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 dark:text-white">Selenium</h3>
+                                </div>
+                                <div class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow text-center">
+                                    <div class="w-12 h-12 bg-gold-100 dark:bg-gold-900 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fab fa-docker text-gold-500"></i>
+                                    </div>
+                                    <h3 class="font-bold text-gray-800 dark:text-white">Docker</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3">
+                        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-md p-6 sticky top-6">
+                            <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Quick Facts</h2>
+                            <ul class="list-disc pl-6 text-gray-700 dark:text-gray-200 space-y-2 mb-6">
+                                <li>Software powers every modern business and device.</li>
+                                <li>Agile and DevOps speed up delivery and feedback.</li>
+                                <li>Automated testing is key to scalable quality.</li>
+                                <li>Open source tools accelerate innovation.</li>
+                            </ul>
+                            <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Key Concepts</h2>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gold-100 dark:bg-gold-900 text-gold-800 dark:text-gold-200 px-3 py-1 rounded-full text-sm">Version Control</span>
+                                <span class="bg-gold-100 dark:bg-gold-900 text-gold-800 dark:text-gold-200 px-3 py-1 rounded-full text-sm">Continuous Integration</span>
+                                <span class="bg-gold-100 dark:bg-gold-900 text-gold-800 dark:text-gold-200 px-3 py-1 rounded-full text-sm">Continuous Delivery</span>
+                                <span class="bg-gold-100 dark:bg-gold-900 text-gold-800 dark:text-gold-200 px-3 py-1 rounded-full text-sm">Unit Testing</span>
+                                <span class="bg-gold-100 dark:bg-gold-900 text-gold-800 dark:text-gold-200 px-3 py-1 rounded-full text-sm">Microservices</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gold-500 dark:bg-slate-800 text-white dark:text-gold-100 py-10">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                <div class="gold-gradient w-8 h-8 rounded-full flex items-center justify-center">
+                    <i class="fas fa-lightbulb text-white"></i>
+                </div>
+                <span class="font-bold text-xl">TechLumin</span>
+            </div>
+            <div class="flex space-x-6 mb-4 md:mb-0">
+                <a href="index.html" class="hover:underline">Home</a>
+                <a href="articles.html" class="hover:underline">Articles</a>
+                <a href="dashboards.html" class="hover:underline">Dashboards</a>
+                <a href="topics.html" class="hover:underline">Topics</a>
+            </div>
+            <div class="text-sm">
+                &copy; 2025 TechLumin. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Dark mode toggle
+        document.getElementById('toggle').addEventListener('change', function() {
+            document.documentElement.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>
