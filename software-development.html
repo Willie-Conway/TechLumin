@@ -202,31 +202,95 @@
             </div>
         </section>
     </main>
+    
     <!-- Footer -->
-    <footer class="bg-gold-500 dark:bg-slate-800 text-white dark:text-gold-100 py-10">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                <div class="gold-gradient w-8 h-8 rounded-full flex items-center justify-center">
-                    <i class="fas fa-lightbulb text-white"></i>
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="gold-gradient w-8 h-8 rounded-full flex items-center justify-center">
+                            <i class="fas fa-lightbulb text-white"></i>
+                        </div>
+                        <h2 class="text-xl font-bold">Tech<span class="text-gold-500">Lumin</span></h2>
+                    </div>
+                    <p class="text-gray-400 mb-4">Illuminating the future of technology through data and software insights.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gold-500 transition duration-300">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
                 </div>
-                <span class="font-bold text-xl">TechLumin</span>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Explore</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-gold-500 transition duration-300" onclick="showPage('articles')">Articles</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-500 transition duration-300" onclick="showPage('dashboards')">Dashboards</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-500 transition duration-300" onclick="showPage('topics')">Topics</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-gold-500 transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-500 transition duration-300">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gold-500 transition duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Subscribe</h3>
+                    <p class="text-gray-400 mb-4">Get the latest articles and insights delivered to your inbox.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-gold-500 hover:bg-gold-600 text-white px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="flex space-x-6 mb-4 md:mb-0">
-                <a href="index.html" class="hover:underline">Home</a>
-                <a href="articles.html" class="hover:underline">Articles</a>
-                <a href="dashboards.html" class="hover:underline">Dashboards</a>
-                <a href="topics.html" class="hover:underline">Topics</a>
-            </div>
-            <div class="text-sm">
-                &copy; 2025 TechLumin. All rights reserved.
+            
+            <div class="border-t border-slate-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 TechLumin. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
     <script>
         // Dark mode toggle
-        document.getElementById('toggle').addEventListener('change', function() {
-            document.documentElement.classList.toggle('dark');
+        const toggle = document.getElementById('toggle');
+        const html = document.documentElement;
+        
+        if (localStorage.getItem('darkMode') === 'true' || 
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            toggle.checked = true;
+        }
+        
+        toggle.addEventListener('change', function() {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.setItem('darkMode', true);
+            } else {
+                html.classList.remove('dark');
+                localStorage.setItem('darkMode', false);
+            }
         });
+        
+        // Page navigation
+        function showPage(pageId) {
+            // In a real implementation, this would navigate to the page
+            console.log(`Navigating to ${pageId}`);
+        }
+        
     </script>
 </body>
 </html>
